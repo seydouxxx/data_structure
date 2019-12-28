@@ -1,10 +1,11 @@
-##  Singly Linked List
+##  Doubly Linked List
 ##  by seydouxxx (risc@kakao.com || seydoux.tistory.com)
-##  2019. 12. 26.
+##  2019. 12. 28.
 
 class LinkedList:
     def __init__(self):
         self.head = None
+        self.tail = None
 
     #   print all elements by lines
     def show(self):
@@ -17,26 +18,26 @@ class LinkedList:
     def push(self, node):
         if (self.head is None):
             self.head = node
-        else:
-            point = self.head
-            while (point.next is not None):
-                point = point.next
-            point.next = node
+            self.tail = node
+        else :
+            temp = self.tail
+            self.tail.next = node
+            self.tail = node
+            self.tail.before = temp
     
     #   delete last element
     def delete(self):
         if (self.head is None):
             return False
         else:
-            point = self.head
-            while (point.next.next is not None):
-                point = point.next
-            point.next = None
+            self.tail = self.tail.before
+            self.tail.next = None
 
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+        self.before = None
 
 #   test case
 l = LinkedList()
