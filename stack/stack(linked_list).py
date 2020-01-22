@@ -1,6 +1,7 @@
 ##  Stack with linked list
 ##  by seydouxxx (risc@kakao.com || seydoux.tistory.com)
 ##  2020. 01. 01.
+
 import random
 
 class Stack:
